@@ -1,58 +1,382 @@
-<!doctype html>
-<html lang="en" class="h-100">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-	<meta name="generator" content="Hugo 0.84.0">
-	<title>Cover Template · Bootstrap v5.0</title>
-	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
-	<!-- Bootstrap core CSS -->
-	<link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<!-- Favicons -->
-	<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-	<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-	<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-	<link rel="manifest" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/manifest.json">
-	<link rel="mask-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-	<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon.ico">
-	<meta name="theme-color" content="#7952b3">
-	<style>
-		.bd-placeholder-img {
-			font-size: 1.125rem;
-			text-anchor: middle;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			user-select: none;
-		}
-		
-		@media (min-width: 768px) {
-			.bd-placeholder-img-lg {
-				font-size: 3.5rem;
-			}
-		}
-	</style>
-	<!-- Custom styles for this template -->
-	<link href="cover.css" rel="stylesheet">
-</head>
-<body class="d-flex h-100 text-center text-white bg-dark">
-	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-		<header class="mb-auto">
-			<div>
-				<h3 class="float-md-start mb-0">Cover</h3>
-				<nav class="nav nav-masthead justify-content-center float-md-end"> <a class="nav-link active" aria-current="page" href="#">Home</a> <a class="nav-link" href="#">Features</a> <a class="nav-link" href="#">Contact</a> </nav>
-			</div>
-		</header>
-		<main class="px-3">
-			<h1>Cover your page.</h1>
-			<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-			<p class="lead"> <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a> </p>
-		</main>
-		<footer class="mt-auto text-white-50">
-			<p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-		</footer>
-	</div>
-</body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abdullah Al Amin | Portfolio</title>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+  <style>
+    .profile-user-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+    .nav-sidebar .nav-link.active {
+      background-color: #007bff !important;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      scroll-margin-top: 60px;
+    }
+  </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
+<div class="wrapper">
+
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#about" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#contact" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.linkedin.com/in/billionbd/" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin fa-lg" style="color: #0077b5;"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://github.com/billionbd" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github fa-lg"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="#" class="brand-link text-center">
+      <span class="brand-text font-weight-light">Developer Portfolio</span>
+    </a>
+
+    <div class="sidebar">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex justify-content-center flex-column align-items-center">
+        <div class="image mb-2">
+          <img src="https://via.placeholder.com/150" class="img-circle elevation-2 profile-avatar-target" alt="User Image">
+        </div>
+        <div class="info text-center">
+          <a href="#" class="d-block font-weight-bold">Abdullah Al Amin</a>
+          <small class="text-muted">Full-Stack Web Developer & IT Admin</small>
+        </div>
+      </div>
+
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="#about" class="nav-link active structural-nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>About Me</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" class="nav-link structural-nav-link">
+              <i class="nav-icon fas fa-code"></i>
+              <p>Skills & Expertise</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#experience" class="nav-link structural-nav-link">
+              <i class="nav-icon fas fa-briefcase"></i>
+              <p>Experience</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link structural-nav-link">
+              <i class="nav-icon fas fa-tasks"></i>
+              <p>Key Projects</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link structural-nav-link">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>Contact</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      </div>
+    </aside>
+
+  <div class="content-wrapper">
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark" id="page-title-display">Professional Profile</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="container-fluid">
+        
+        <section id="about" class="mb-5">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card card-primary card-outline">
+                <div class="card-body box-profile">
+                  <div class="text-center">
+                    <img class="profile-user-img img-fluid img-circle profile-avatar-target" src="https://via.placeholder.com/150" alt="User profile picture">
+                  </div>
+                  <h3 class="profile-username text-center">Abdullah Al Amin</h3>
+                  <p class="text-muted text-center">Full-Stack Engineer</p>
+                  <ul class="list-group list-group-unbordered mb-3">
+                    <li class="list-group-item">
+                      <b>Location</b> <a class="float-right text-dark">Dhaka, Bangladesh</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Email</b> <a class="float-right" href="mailto:info@billionbd.com">info@billionbd.com</a>
+                    </li>
+                  </ul>
+                  <a href="https://www.linkedin.com/in/billionbd/" target="_blank" class="btn btn-primary btn-block"><b><i class="fab fa-linkedin"></i> Connect on LinkedIn</b></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header bg-primary">
+                  <h3 class="card-title"><i class="fas fa-info-circle mr-1"></i> Executive Summary</h3>
+                </div>
+                <div class="card-body">
+                  <p>
+                    Passionate Full-Stack Web Developer and IT Systems Administrator with extensive experience designing, building, and maintaining modern dynamic web applications, robust APIs, and streamlined internal enterprise networks. 
+                  </p>
+                  <p>
+                    Specializing in responsive UI development using the AdminLTE framework, optimized backend architectures with structured relational databases, and secure systems optimization tailored to organizational scaling requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="mb-5">
+          <div class="card">
+            <div class="card-header bg-info">
+              <h3 class="card-title"><i class="fas fa-code mr-1"></i> Technical Expertise</h3>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>Development & Frontend</h5>
+                  <div class="progress-group">PHP / Backend Logic <span class="float-right"><b>90</b>%</span>
+                    <div class="progress progress-sm"><div class="progress-bar bg-primary" style="width: 90%"></div></div>
+                  </div>
+                  <div class="progress-group mb-3">JavaScript / UI Interactions <span class="float-right"><b>85</b>%</span>
+                    <div class="progress progress-sm"><div class="progress-bar bg-info" style="width: 85%"></div></div>
+                  </div>
+                  <div class="progress-group mb-3">AdminLTE / Bootstrap <span class="float-right"><b>95</b>%</span>
+                    <div class="progress progress-sm"><div class="progress-bar bg-warning" style="width: 95%"></div></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <h5>Databases & IT Systems</h5>
+                  <div class="progress-group">MySQL / Database Design <span class="float-right"><b>88</b>%</span>
+                    <div class="progress progress-sm"><div class="progress-bar bg-success" style="width: 88%"></div></div>
+                  </div>
+                  <div class="progress-group mb-3">Network Architecture (LAN/WAN) <span class="float-right"><b>80</b>%</span>
+                    <div class="progress progress-sm"><div class="progress-bar bg-danger" style="width: 80%"></div></div>
+                  </div>
+                  <div class="progress-group mb-3">Systems Administration / ERP <span class="float-right"><b>85</b>%</span>
+                    <div class="progress progress-sm"><div class="progress-bar bg-secondary" style="width: 85%"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="mb-5">
+          <div class="card">
+            <div class="card-header bg-success">
+              <h3 class="card-title"><i class="fas fa-briefcase mr-1"></i> Professional Experience</h3>
+            </div>
+            <div class="card-body">
+              <div class="timeline">
+                <div class="time-label">
+                  <span class="bg-red">Present</span>
+                </div>
+                <div>
+                  <i class="fas fa-laptop-code bg-blue"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fas fa-clock"></i> Active</span>
+                    <h3 class="timeline-header"><a href="#">Senior Full-Stack Engineer & IT Infrastructure Manager</a></h3>
+                    <div class="timeline-body">
+                      Leading the strategy, architecture, and deployment of centralized enterprise management dashboards, custom web applications, and dynamic data parsers using PHP, AdminLTE, and JavaScript. Managing corporate infrastructure rollouts including LAN/WAN optimizations, identity management tools, and business application systems.
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="time-label">
+                  <span class="bg-green">Earlier Milestones</span>
+                </div>
+                <div>
+                  <i class="fas fa-database bg-yellow"></i>
+                  <div class="timeline-item">
+                    <h3 class="timeline-header"><a href="#">Web Application Developer</a></h3>
+                    <div class="timeline-body">
+                      Designed scalable database models using MySQL, optimized web performance benchmarks, built secure internal micro-services, and produced modular custom text/image rendering engines supporting multi-script dynamic assets.
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <i class="fas fa-clock bg-gray"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="mb-5">
+          <div class="card">
+            <div class="card-header bg-warning">
+              <h3 class="card-title text-dark"><i class="fas fa-tasks mr-1"></i> Key Highlighted Projects</h3>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="small-box bg-info">
+                    <div class="inner">
+                      <h3>API</h3>
+                      <p>Feed & Data Analyzers</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <a href="#" class="small-box-footer">XML/JSON Parsing Engines</a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="small-box bg-success">
+                    <div class="inner">
+                      <h3>SVG/UI</h3>
+                      <p>Dynamic Graphic Generation</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-image"></i></div>
+                    <a href="#" class="small-box-footer">Custom High-Performance Engines</a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="small-box bg-purple">
+                    <div class="inner">
+                      <h3>ERP-MIS</h3>
+                      <p>Infrastructure Engineering</p>
+                    </div>
+                    <div class="icon"><i class="fas fa-network-wired"></i></div>
+                    <a href="#" class="small-box-footer">Centralized Monitoring Systems</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="mb-5">
+          <div class="card card-dark">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fas fa-envelope mr-1"></i> Get In Touch</h3>
+            </div>
+            <form id="contactForm">
+              <div class="card-body">
+                <div id="formStatus" class="alert d-none"></div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contactName">Name</label>
+                      <input type="text" class="form-control" id="contactName" placeholder="Your Full Name" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="contactEmail">Email address</label>
+                      <input type="email" class="form-control" id="contactEmail" placeholder="Your Email Address" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="contactMessage">Message</label>
+                  <textarea class="form-control" id="contactMessage" rows="4" placeholder="Type your message here..." required></textarea>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-dark">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+      </div>
+    </div>
+    </div>
+  <footer class="main-footer text-center">
+    <strong>Copyright &copy; 2026 <a href="https://www.linkedin.com/in/billionbd/" target="_blank" rel="noopener noreferrer">billionbd</a>.</strong> All rights reserved.
+  </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    // 1. Smooth Scroll Spy / Highlight Current Active Sidebar Element on Scroll
+    const sections = $("section");
+    const navLinks = $(".structural-nav-link");
+
+    $(window).on("scroll", function () {
+      let currentSectionId = "";
+      const scrollPos = $(document).scrollTop() + 100;
+
+      sections.each(function () {
+        const top = $(this).offset().top;
+        const bottom = top + $(this).outerHeight();
+
+        if (scrollPos >= top && scrollPos <= bottom) {
+          currentSectionId = $(this).attr("id");
+        }
+      });
+
+      if (currentSectionId) {
+        navLinks.removeClass("active");
+        $(`.structural-nav-link[href="#${currentSectionId}"]`).addClass("active");
+        
+        // Dynamically change title header based on section view
+        const currentText = $(`.structural-nav-link[href="#${currentSectionId}"] p`).text();
+        $("#page-title-display").text(currentText);
+      }
+    });
+
+    // 2. Client-side handling for Contact Form submission
+    $("#contactForm").on("submit", function (e) {
+      e.preventDefault();
+      
+      const name = $("#contactName").val();
+      const statusDiv = $("#formStatus");
+
+      statusDiv.removeClass("d-none alert-danger alert-success").addClass("alert-success");
+      statusDiv.html(`<i class="icon fas fa-check"></i> Thank you, ${name}! Your inquiry has been simulation-sent successfully.`);
+      
+      // Reset form fields
+      $("#contactForm")[0].reset();
+
+      // Clear alert notice after 4 seconds
+      setTimeout(() => {
+        statusDiv.addClass("d-none");
+      }, 4000);
+    });
+
+    // 3. Fallback to initialize a cleaner programmatic UI experience on avatar placeholders
+    // Optional: dynamically sets UI color thematic balance dynamically
+    $(".profile-avatar-target").attr("src", "https://ui-avatars.com/api/?name=Abdullah+Al+Amin&background=0D8ABC&color=fff&size=150");
+  });
+</script>
+</body>
 </html>
