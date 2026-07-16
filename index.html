@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | JSON File Dashboard</title>
+  <title>AdminLTE 3 | JSON Powered SPA</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -27,7 +27,7 @@
 
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="#" class="brand-link">
-      <span class="brand-text font-weight-light pl-3" id="brand-name">Loading...</span>
+      <span class="brand-text font-weight-light pl-3" id="brand-name">AdminLTE SPA</span>
     </a>
 
     <div class="sidebar">
@@ -85,7 +85,7 @@
               <h3 class="card-title">Welcome</h3>
             </div>
             <div class="card-body">
-              <p class="card-text">This interface is reading directly from your adjacent <code>data.json</code> database file.</p>
+              <p class="card-text">Welcome to your JSON dynamic database application.</p>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@
   </div>
 
   <footer class="main-footer">
-    <div class="float-right d-none d-sm-inline">JSON File Sync</div>
+    <div class="float-right d-none d-sm-inline">JSON DB Engine</div>
     <strong>Copyright &copy; <span id="copy-year">2026</span> <span id="footer-site-name">AdminLTE</span>.</strong> All rights reserved.
   </footer>
 </div>
@@ -195,74 +195,51 @@
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
 
 <script>
-  let appDatabase = {};
-
-  // 1. Fetch data from data.json on page startup
-  function loadDatabase() {
-    fetch('data.json')
-      .then(response => {
-        if (!response.ok) throw new Error("Could not read data.json file");
-        return response.json();
-      })
-      .then(data => {
-        appDatabase = data;
-        renderApp();
-        
-        // Sync layout route on startup based on location hash
-        const initialHash = window.location.hash || '#dashboard';
-        const activeRoute = document.querySelector(`.spa-nav-link[href="${initialHash}"]`);
-        if (activeRoute) activeRoute.click();
-      })
-      .catch(err => {
-        console.error("Initialization Error:", err);
-        alert("Make sure you are running a local server environment (e.g. Apache, PHP server) to open and fetch data.json.");
-      });
-  }
-
-  // 2. Commit modifications back into data.json via backend API handler
-  function saveDatabase() {
-    fetch('save.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(appDatabase, null, 2)
-    })
-    .then(response => response.json())
-    .then(res => {
-      if (res.status === 'success') {
-        renderApp();
-      } else {
-        alert("Error saving data: " + res.message);
+  // 1. Initial Default Database Schema (Fallback JSON)
+  const initialJSONData = {
+    "webpage_configuration": {
+      "settings": {
+        "site_name": "AdminLTE Portal",
+        "maintenance_mode": false,
+        "copyright_year": 2026
       }
-    })
-    .catch(err => {
-      console.error("Write Error:", err);
-      alert("Failed to reach save.php handler to write changes down to data.json.");
-    });
+    },
+    "pages": [
+      { "id": "dashboard-page", "title": "Dashboard", "route": "#dashboard", "icon": "fas fa-tachometer-alt", "metrics": { "new_orders": 150, "bounce_rate": "53%" } },
+      { "id": "users-page", "title": "User Management", "route": "#users", "icon": "fas fa-users" },
+      { "id": "settings-page", "title": "Settings", "route": "#settings", "icon": "fas fa-cogs" }
+    ],
+    "users": [
+      { "id": 183, "name": "John Doe", "date": "2026-07-11", "status": "Approved", "reason": "Bacon ipsum dolor sit amet..." },
+      { "id": 219, "name": "Alexander Pierce", "date": "2026-07-12", "status": "Pending", "reason": "Bacon ipsum dolor sit amet..." }
+    ]
+  };
+
+  // Initialize DB from LocalStorage or Load Default Schema
+  let appDatabase = JSON.parse(localStorage.getItem('app_db')) || initialJSONData;
+
+  function saveDatabase() {
+    localStorage.setItem('app_db', JSON.stringify(appDatabase));
+    renderApp();
   }
 
-  // 3. Render Engine mapping UI items to JSON structures
+  // 2. Dynamic DOM Rendering Functions
   function renderApp() {
-    if (!appDatabase.webpage_configuration) return;
-
     const config = appDatabase.webpage_configuration.settings;
     
-    // Brand & Footer Sync
+    // Update global configs
     document.getElementById('brand-name').textContent = config.site_name;
     document.getElementById('footer-site-name').textContent = config.site_name;
     document.getElementById('copy-year').textContent = config.copyright_year;
-    
-    // Settings inputs Sync
     document.getElementById('siteName').value = config.site_name;
     document.getElementById('maintenanceMode').checked = config.maintenance_mode;
 
-    // Metrics Dashboard Sync
+    // Render Metrics (Dashboard)
     const dbPage = appDatabase.pages.find(p => p.id === 'dashboard-page');
-    if (dbPage && dbPage.metrics) {
-      document.getElementById('stat-orders').textContent = dbPage.metrics.new_orders;
-      document.getElementById('stat-bounce').textContent = dbPage.metrics.bounce_rate;
-    }
+    document.getElementById('stat-orders').textContent = dbPage.metrics.new_orders;
+    document.getElementById('stat-bounce').textContent = dbPage.metrics.bounce_rate;
 
-    // Sidebar Menu Generation
+    // Render Navigation Menu
     const menuContainer = document.getElementById('sidebar-menu');
     const currentActiveHref = window.location.hash || '#dashboard';
     menuContainer.innerHTML = '';
@@ -278,7 +255,7 @@
         </li>`;
     });
 
-    // User Table Rows Generation
+    // Render User Management Table
     const tableBody = document.getElementById('user-table-body');
     tableBody.innerHTML = '';
     appDatabase.users.forEach(user => {
@@ -297,11 +274,11 @@
         </tr>`;
     });
 
-    // Dynamic Route Listeners Re-mapping
+    // Rebind Nav Link Click Routing Events
     setupSPAEngine();
   }
 
-  // 4. Client Side Routing Rules
+  // 3. SPA Client-Side Routing Engine
   function setupSPAEngine() {
     document.querySelectorAll('.spa-nav-link').forEach(link => {
       link.onclick = function (e) {
@@ -323,16 +300,20 @@
     });
   }
 
-  // 5. Form Actions & Mutation Handlers
+  // 4. Data Modification Logic (CRUD)
+  
+  // Settings Update
   document.getElementById('settings-form').onsubmit = function(e) {
     e.preventDefault();
     appDatabase.webpage_configuration.settings.site_name = document.getElementById('siteName').value;
     appDatabase.webpage_configuration.settings.maintenance_mode = document.getElementById('maintenanceMode').checked;
     saveDatabase();
+    alert('Settings Saved and JSON updated!');
   };
 
+  // User Management Utilities
   window.openUserModal = function(id = null) {
-    if (id) {
+    if(id) {
       const user = appDatabase.users.find(u => u.id === id);
       document.getElementById('modalTitle').textContent = "Edit User";
       document.getElementById('userId').value = user.id;
@@ -354,14 +335,12 @@
     const status = document.getElementById('userStatus').value;
     const reason = document.getElementById('userReason').value;
 
-    if (id) {
+    if(id) { // Update existing user
       const user = appDatabase.users.find(u => u.id == id);
-      if (user) {
-        user.name = name;
-        user.status = status;
-        user.reason = reason;
-      }
-    } else {
+      user.name = name;
+      user.status = status;
+      user.reason = reason;
+    } else { // Create new user
       const newId = appDatabase.users.length ? Math.max(...appDatabase.users.map(u => u.id)) + 1 : 100;
       appDatabase.users.push({
         id: newId,
@@ -376,15 +355,18 @@
   };
 
   window.deleteUser = function(id) {
-    if (confirm("Are you sure you want to delete this user entry?")) {
+    if(confirm("Are you sure you want to remove this user?")) {
       appDatabase.users = appDatabase.users.filter(u => u.id !== id);
       saveDatabase();
     }
   };
 
-  // Run app instantiation
+  // Initial Runtime Boot up
   document.addEventListener('DOMContentLoaded', () => {
-    loadDatabase();
+    renderApp();
+    const initialHash = window.location.hash || '#dashboard';
+    const activeRoute = document.querySelector(`.spa-nav-link[href="${initialHash}"]`);
+    if (activeRoute) activeRoute.click();
   });
 </script>
 </body>
