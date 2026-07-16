@@ -3,243 +3,241 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Abdullah Al Amin | Executive Portfolio</title>
+  <title>Abdullah Al Amin | Portfolio</title>
 
-  <!-- Google Font: Inter & Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:300,400,600,700&display=fallback">
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Theme style (AdminLTE) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-  
+
   <style>
+    /* Premium Dark Theme Overrides & Global Variables */
     :root {
-      --primary-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      --accent-blue: #00d2ff;
-      --accent-purple: #9d50bb;
-      --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-      --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --bg-dark-primary: #0B0F19;
+      --bg-dark-secondary: #151B2C;
+      --accent-gradient: linear-gradient(135deg, #007bff, #00d2ff);
+      --accent-glow: rgba(0, 123, 255, 0.4);
+      --card-border: rgba(255, 255, 255, 0.06);
     }
 
     body {
-      font-family: 'Inter', 'Source Sans Pro', sans-serif;
-      background-color: #f4f6f9;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark-primary) !important;
+      color: #E2E8F0;
+      overflow-x: hidden;
     }
-
-    /* Elegant Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #c1c1c1;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #a8a8a8;
-    }
-
+    
     html {
       scroll-behavior: smooth;
     }
+
     section {
-      scroll-margin-top: 75px;
+      scroll-margin-top: 80px;
+      padding-bottom: 2rem;
     }
 
-    /* Top Brand & Navbar Styling */
-    .main-header {
-      border-bottom: 1px solid rgba(0,0,0,0.06) !important;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.9) !important;
+    /* Layout Wrapper Styling */
+    .content-wrapper {
+      background-color: var(--bg-dark-primary) !important;
     }
     
-    /* Sidebar Luxury Updates */
     .main-sidebar {
-      background: var(--primary-gradient) !important;
-      box-shadow: 4px 0 20px rgba(0,0,0,0.15) !important;
-    }
-    .brand-link {
-      border-bottom: 1px solid rgba(255,255,255,0.1) !important;
-      font-family: 'Inter', sans-serif;
-      letter-spacing: 1px;
-    }
-    .user-panel {
-      border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+      background-color: var(--bg-dark-secondary) !important;
+      border-right: 1px solid var(--card-border);
     }
 
-    /* Dynamic Profile Avatar Glow */
-    .profile-avatar-target {
-      border: 4px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
-      transition: var(--transition-smooth);
-    }
-    .profile-avatar-target:hover {
-      transform: scale(1.05) rotate(3deg);
-      box-shadow: 0 0 25px rgba(0, 210, 255, 0.6);
+    .main-header {
+      background-color: rgba(11, 15, 25, 0.8) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--card-border) !important;
     }
 
-    /* Elevated Cards (Glassmorphism Touch) */
+    /* Custom Modernized Cards */
     .card {
-      border: none !important;
-      border-radius: 12px !important;
-      box-shadow: var(--card-shadow) !important;
-      transition: var(--transition-smooth);
+      background-color: var(--bg-dark-secondary);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       overflow: hidden;
     }
+    
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12) !important;
+      box-shadow: 0 8px 30px rgba(0, 123, 255, 0.15);
     }
+
     .card-header {
-      border-bottom: none !important;
+      background-color: rgba(255, 255, 255, 0.02) !important;
+      border-bottom: 1px solid var(--card-border) !important;
       font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
-    /* Custom Theme Colors for Cards */
-    .bg-grad-primary { background: linear-gradient(135deg, #007bff, #0056b3) !important; color: white; }
-    .bg-grad-info { background: linear-gradient(135deg, #17a2b8, #117a8b) !important; color: white; }
-    .bg-grad-success { background: linear-gradient(135deg, #28a745, #1e7e34) !important; color: white; }
-    .bg-grad-warning { background: linear-gradient(135deg, #ffc107, #d39e00) !important; color: #1f1f1f; }
-    .bg-grad-dark { background: linear-gradient(135deg, #343a40, #212529) !important; color: white; }
-
-    /* Interactive Skill Progress Bars */
-    .progress-group {
-      margin-bottom: 20px;
+    /* Profile Avatar & Layout Glow */
+    .profile-card {
+      background: linear-gradient(180deg, rgba(0, 123, 255, 0.05) 0%, rgba(21, 27, 44, 1) 100%);
     }
-    .progress {
-      height: 8px !important;
+
+    .profile-user-img {
+      width: 130px;
+      height: 130px;
+      border: 3px solid #007bff !important;
+      box-shadow: 0 0 20px var(--accent-glow);
+      transition: transform 0.5s ease;
+      object-fit: cover;
+    }
+
+    .profile-user-img:hover {
+      transform: rotate(360deg);
+    }
+
+    /* Neon Accent Buttons */
+    .btn-gradient {
+      background: var(--accent-gradient);
+      color: #fff !important;
+      border: none;
+      font-weight: 600;
       border-radius: 6px;
-      background-color: #e9ecef;
-      overflow: visible;
-    }
-    .progress-bar {
-      border-radius: 6px;
-      position: relative;
-      background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-      background-size: 1rem 1rem;
-      animation: progress-bar-stripes 1s linear infinite;
+      transition: all 0.3s ease;
     }
 
-    /* Premium Project Box styling */
+    .btn-gradient:hover {
+      opacity: 0.9;
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    /* Refined Custom Info Widgets */
     .small-box {
-      border-radius: 12px !important;
+      border-radius: 12px;
       overflow: hidden;
-      transition: var(--transition-smooth);
+      border: 1px solid var(--card-border);
+      background: var(--bg-dark-secondary) !important;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
+    
     .small-box:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+      transform: scale(1.03);
+      border-color: #007bff;
     }
 
-    /* Custom Interactive Navigation Indicator */
-    .nav-sidebar .nav-link {
-      border-radius: 8px;
-      margin: 3px 10px;
-      transition: var(--transition-smooth);
+    .small-box .inner h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .nav-sidebar .nav-link.active {
-      background: rgba(255, 255, 255, 0.15) !important;
-      box-shadow: inset 4px 0 0 var(--accent-blue);
+
+    /* Premium Sleek Progress Bars */
+    .progress-bar-glow {
+      background: var(--accent-gradient) !important;
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .progress {
+      background-color: rgba(255, 255, 255, 0.08) !important;
+      border-radius: 10px;
+    }
+
+    /* Timeline Makeover */
+    .timeline::before {
+      background-color: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .timeline-item {
+      background-color: var(--bg-dark-secondary) !important;
+      color: #E2E8F0 !important;
+      border: 1px solid var(--card-border) !important;
+      border-radius: 8px !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .timeline-header a {
+      color: #00d2ff !important;
       font-weight: 600;
     }
 
-    /* Dark Mode Theme Variables & Class */
-    body.dark-mode-active {
-      background-color: #121212 !important;
-      color: #e0e0e0;
+    .timeline-header {
+      border-bottom: 1px solid var(--card-border) !important;
     }
-    body.dark-mode-active .main-header {
-      background: rgba(30, 30, 30, 0.9) !important;
-      border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+
+    /* Form Inputs */
+    .form-control {
+      background-color: rgba(11, 15, 25, 0.6) !important;
+      border: 1px solid var(--card-border) !important;
+      color: #E2E8F0 !important;
+      border-radius: 6px;
     }
-    body.dark-mode-active .main-header .nav-link {
-      color: #e0e0e0 !important;
+
+    .form-control:focus {
+      border-color: #007bff !important;
+      box-shadow: 0 0 8px var(--accent-glow) !important;
     }
-    body.dark-mode-active .content-wrapper {
-      background-color: #1a1a1a !important;
-    }
-    body.dark-mode-active .card {
-      background-color: #242424 !important;
-      color: #e0e0e0;
-    }
-    body.dark-mode-active .card:not([class*="bg-grad-"]) {
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important;
-    }
-    body.dark-mode-active .timeline-item {
-      background-color: #2a2a2a !important;
-      color: #e0e0e0 !important;
-      border-color: #333 !important;
-    }
-    body.dark-mode-active .timeline-header {
-      color: #ffffff !important;
-      border-bottom-color: #3a3a3a !important;
-    }
-    body.dark-mode-active .list-group-item {
-      background-color: transparent !important;
-      color: #e0e0e0 !important;
-      border-color: #333 !important;
+
+    /* Tech Pill Badges */
+    .tech-pill {
+      background: rgba(0, 123, 255, 0.1);
+      border: 1px solid rgba(0, 123, 255, 0.2);
+      color: #00d2ff;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-right: 5px;
+      display: inline-block;
     }
   </style>
 </head>
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed dark-mode">
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-light">
-    <!-- Left navbar links -->
+  <nav class="main-header navbar navbar-expand navbar-dark">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#about" class="nav-link font-weight-600">Home</a>
+        <a href="#about" class="nav-link text-white-50">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#contact" class="nav-link font-weight-600">Contact</a>
+        <a href="#contact" class="nav-link text-white-50">Contact</a>
       </li>
     </ul>
 
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto align-items-center">
-      <!-- Dark Mode Switcher -->
-      <li class="nav-item mr-3">
-        <button class="btn btn-outline-secondary btn-sm rounded-pill" id="themeToggleBtn">
-          <i class="fas fa-moon mr-1"></i> <span id="themeBtnText">Dark Mode</span>
-        </button>
-      </li>
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="https://www.linkedin.com/in/billionbd/" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-linkedin fa-lg" style="color: #0077b5;"></i>
+        <a class="nav-link text-white" href="https://www.linkedin.com/in/billionbd/" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin fa-lg text-primary"></i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://github.com/billionbd" target="_blank" rel="noopener noreferrer">
+        <a class="nav-link text-white" href="https://github.com/billionbd" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-github fa-lg"></i>
         </a>
       </li>
     </ul>
   </nav>
-  <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="#" class="brand-link text-center py-3">
-      <span class="brand-text font-weight-bold text-uppercase" style="letter-spacing: 1.5px; font-size: 0.95rem;">ABDUllAH AL AMIN</span>
+    <a href="#" class="brand-link text-center border-0 py-3">
+      <span class="brand-text font-weight-bold" style="letter-spacing: 1px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">BILLION.DEV</span>
     </a>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel mt-4 pb-4 mb-4 d-flex justify-content-center flex-column align-items-center">
+    <div class="sidebar px-3">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex justify-content-center flex-column align-items-center border-0">
         <div class="image mb-3">
-          <img src="https://via.placeholder.com/150" class="img-circle elevation-3 profile-avatar-target" alt="User Image" style="width: 100px; height: 100px;">
+          <img src="" class="img-circle elevation-3 profile-avatar-target" style="border: 2px solid #007bff;" alt="User Image">
         </div>
         <div class="info text-center">
-          <a href="#" class="d-block font-weight-bold text-white mb-1">Abdullah Al Amin</a>
-          <span class="badge badge-info px-3 py-2 rounded-pill font-weight-normal">Full-Stack Engineer</span>
+          <a href="#" class="d-block font-weight-bold text-white h6 mb-1">Abdullah Al Amin</a>
+          <span class="badge bg-primary-gradient px-2 py-1" style="font-size: 75%; background: var(--accent-gradient);">Full-Stack Engineer</span>
         </div>
       </div>
 
@@ -247,102 +245,79 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="#about" class="nav-link active structural-nav-link">
-              <i class="nav-icon fas fa-user-tie"></i>
+            <a href="#about" class="nav-link active structural-nav-link mb-2">
+              <i class="nav-icon fas fa-user-astronaut"></i>
               <p>About Me</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#skills" class="nav-link structural-nav-link">
+            <a href="#skills" class="nav-link structural-nav-link mb-2">
               <i class="nav-icon fas fa-laptop-code"></i>
-              <p>Skills & Expertise</p>
+              <p>Skills & Stack</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#experience" class="nav-link structural-nav-link">
+            <a href="#experience" class="nav-link structural-nav-link mb-2">
               <i class="nav-icon fas fa-history"></i>
-              <p>Experience Timeline</p>
+              <p>Journey</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#projects" class="nav-link structural-nav-link">
-              <i class="nav-icon fas fa-rocket"></i>
-              <p>Key Projects</p>
+            <a href="#projects" class="nav-link structural-nav-link mb-2">
+              <i class="nav-icon fas fa-cubes"></i>
+              <p>Projects</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#contact" class="nav-link structural-nav-link">
+            <a href="#contact" class="nav-link structural-nav-link mb-2">
               <i class="nav-icon fas fa-paper-plane"></i>
-              <p>Get in Touch</p>
+              <p>Contact</p>
             </a>
           </li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header py-4">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col-sm-6">
-            <h1 class="m-0 font-weight-bold" id="page-title-display" style="letter-spacing: -0.5px;">About Me</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
+  <!-- Content Wrapper -->
+  <div class="content-wrapper pt-4">
     <div class="content">
       <div class="container-fluid">
         
         <!-- ABOUT ME SECTION -->
-        <section id="about" class="mb-5">
+        <section id="about">
           <div class="row">
-            <div class="col-lg-4 col-md-5 mb-4">
-              <div class="card card-primary card-outline h-100 py-3">
-                <div class="card-body box-profile d-flex flex-column justify-content-between">
-                  <div class="text-center">
-                    <img class="profile-user-img img-fluid img-circle profile-avatar-target mb-3" src="https://via.placeholder.com/150" alt="User profile picture">
-                    <h3 class="profile-username font-weight-bold mb-1">Abdullah Al Amin</h3>
-                    <p class="text-muted font-weight-500 mb-3">Senior Web Architect</p>
-                  </div>
+            <div class="col-md-4">
+              <div class="card profile-card text-center p-3">
+                <div class="card-body">
+                  <img class="profile-user-img img-fluid img-circle profile-avatar-target mb-4" src="" alt="User profile picture">
+                  <h3 class="font-weight-bold text-white mb-1">Abdullah Al Amin</h3>
+                  <p class="text-info font-weight-light mb-4">@billionbd</p>
                   
-                  <ul class="list-group list-group-unbordered my-3">
-                    <li class="list-group-item d-flex justify-content-between align-items-center border-top-0 px-2">
-                      <span class="text-muted"><i class="fas fa-map-marker-alt mr-2 text-primary"></i>Location</span> 
-                      <span class="font-weight-600">Dhaka, Bangladesh</span>
+                  <ul class="list-group list-group-unbordered mb-4 text-left">
+                    <li class="list-group-item border-0 bg-transparent px-0 py-2">
+                      <i class="fas fa-map-marker-alt text-danger mr-2"></i> <span>Dhaka, Bangladesh</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center px-2">
-                      <span class="text-muted"><i class="fas fa-envelope mr-2 text-info"></i>Email</span> 
-                      <a class="font-weight-600 text-primary" href="mailto:info@billionbd.com">info@billionbd.com</a>
+                    <li class="list-group-item border-0 bg-transparent px-0 py-2">
+                      <i class="fas fa-envelope text-warning mr-2"></i> <a href="mailto:info@billionbd.com" class="text-white-50">info@billionbd.com</a>
                     </li>
                   </ul>
-                  
-                  <a href="https://www.linkedin.com/in/billionbd/" target="_blank" class="btn btn-primary btn-block rounded-pill py-2 font-weight-600 elevation-2">
-                    <i class="fab fa-linkedin-in mr-2"></i> Connect on LinkedIn
-                  </a>
+                  <a href="https://www.linkedin.com/in/billionbd/" target="_blank" class="btn btn-gradient btn-block py-2"><i class="fab fa-linkedin mr-2"></i>View LinkedIn Profile</a>
                 </div>
               </div>
             </div>
             
-            <div class="col-lg-8 col-md-7 mb-4">
-              <div class="card h-100">
-                <div class="card-header bg-grad-primary py-3">
-                  <h3 class="card-title font-weight-bold m-0"><i class="fas fa-bullseye mr-2"></i> Professional Statement</h3>
+            <div class="col-md-8">
+              <div class="card h-100 justify-content-center">
+                <div class="card-header border-0">
+                  <h3 class="card-title text-white font-weight-bold"><i class="fas fa-terminal mr-2 text-primary"></i> profile.init()</h3>
                 </div>
-                <div class="card-body d-flex flex-column justify-content-center">
-                  <h3 class="font-weight-bold mb-3" style="letter-spacing: -0.5px;">Engineering solutions that power operations and user experiences.</h3>
-                  <p class="lead text-muted" style="font-size: 1.05rem; line-height: 1.7;">
-                    Dynamic Full-Stack Web Developer and IT Systems Administrator with structured professional practice building enterprise dashboards, dynamic API parsers, and custom graphic compilation systems.
+                <div class="card-body" style="font-size: 1.1rem; line-height: 1.8; color: #cbd5e1;">
+                  <p>
+                    Passionate <strong class="text-white">Full-Stack Web Developer</strong> and Systems Infrastructure specialist. I cross the threshold between writing high-performance application code and architecting resilient system frameworks.
                   </p>
-                  <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6;">
-                    Specialized in creating elegant, modular web applications built on clean frameworks (PHP, Bootstrap, JavaScript, AdminLTE) while supporting highly optimized database configurations (MySQL) and robust corporate localized networks (LAN/WAN).
+                  <p>
+                    Specializing in creating rapid, production-ready interactive web frontends using frameworks like <span class="tech-pill">AdminLTE</span> and <span class="tech-pill">Bootstrap</span>, layered elegantly onto robust custom backends powered by structured engines and optimized relational architectures.
                   </p>
                 </div>
               </div>
@@ -351,66 +326,35 @@
         </section>
 
         <!-- SKILLS SECTION -->
-        <section id="skills" class="mb-5">
+        <section id="skills">
           <div class="card">
-            <div class="card-header bg-grad-info py-3">
-              <h3 class="card-title font-weight-bold m-0"><i class="fas fa-sliders-h mr-2"></i> Professional Competencies</h3>
+            <div class="card-header">
+              <h3 class="card-title text-white font-weight-bold"><i class="fas fa-brain mr-2 text-info"></i> Core Competencies</h3>
             </div>
-            <div class="card-body py-4">
+            <div class="card-body">
               <div class="row">
                 <div class="col-md-6 px-4">
-                  <h5 class="font-weight-bold mb-4 text-secondary"><i class="fas fa-code mr-2 text-primary"></i>Development & UI Styling</h5>
-                  
-                  <div class="progress-group">
-                    <span class="font-weight-600">PHP & MVC Frameworks</span>
-                    <span class="float-right font-weight-bold">90%</span>
-                    <div class="progress progress-sm mt-2">
-                      <div class="progress-bar bg-primary" style="width: 90%"></div>
-                    </div>
+                  <h5 class="text-white font-weight-bold mb-3"><i class="fas fa-code text-primary mr-2"></i> Frontend & Logic</h5>
+                  <div class="progress-group mb-3">PHP Core Implementation <span class="float-right font-weight-bold">90%</span>
+                    <div class="progress mt-1" style="height: 6px;"><div class="progress-bar progress-bar-glow" style="width: 90%"></div></div>
                   </div>
-                  
-                  <div class="progress-group">
-                    <span class="font-weight-600">JavaScript / DOM Manipulation</span>
-                    <span class="float-right font-weight-bold">85%</span>
-                    <div class="progress progress-sm mt-2">
-                      <div class="progress-bar bg-info" style="width: 85%"></div>
-                    </div>
+                  <div class="progress-group mb-3">JavaScript Dynamic UI <span class="float-right font-weight-bold">85%</span>
+                    <div class="progress mt-1" style="height: 6px;"><div class="progress-bar progress-bar-glow" style="width: 85%"></div></div>
                   </div>
-                  
-                  <div class="progress-group">
-                    <span class="font-weight-600">AdminLTE / Bootstrap 4 & 5</span>
-                    <span class="float-right font-weight-bold">95%</span>
-                    <div class="progress progress-sm mt-2">
-                      <div class="progress-bar bg-warning" style="width: 95%"></div>
-                    </div>
+                  <div class="progress-group mb-3">AdminLTE Customization <span class="float-right font-weight-bold">95%</span>
+                    <div class="progress mt-1" style="height: 6px;"><div class="progress-bar progress-bar-glow" style="width: 95%"></div></div>
                   </div>
                 </div>
-                
                 <div class="col-md-6 px-4 mt-4 mt-md-0">
-                  <h5 class="font-weight-bold mb-4 text-secondary"><i class="fas fa-server mr-2 text-success"></i>Infrastructure & Systems</h5>
-                  
-                  <div class="progress-group">
-                    <span class="font-weight-600">MySQL / Relational Database Design</span>
-                    <span class="float-right font-weight-bold">88%</span>
-                    <div class="progress progress-sm mt-2">
-                      <div class="progress-bar bg-success" style="width: 88%"></div>
-                    </div>
+                  <h5 class="text-white font-weight-bold mb-3"><i class="fas fa-server text-success mr-2"></i> Data & Infrastructure</h5>
+                  <div class="progress-group mb-3">MySQL Database Optimization <span class="float-right font-weight-bold">88%</span>
+                    <div class="progress mt-1" style="height: 6px;"><div class="progress-bar progress-bar-glow" style="width: 88%"></div></div>
                   </div>
-                  
-                  <div class="progress-group">
-                    <span class="font-weight-600">Network Administration (LAN/WAN)</span>
-                    <span class="float-right font-weight-bold">80%</span>
-                    <div class="progress progress-sm mt-2">
-                      <div class="progress-bar bg-danger" style="width: 80%"></div>
-                    </div>
+                  <div class="progress-group mb-3">Network Security / LAN & WAN <span class="float-right font-weight-bold">80%</span>
+                    <div class="progress mt-1" style="height: 6px;"><div class="progress-bar progress-bar-glow" style="width: 80%"></div></div>
                   </div>
-                  
-                  <div class="progress-group">
-                    <span class="font-weight-600">ERP Integration & Business Dashboards</span>
-                    <span class="float-right font-weight-bold">85%</span>
-                    <div class="progress progress-sm mt-2">
-                      <div class="progress-bar bg-secondary" style="width: 85%"></div>
-                    </div>
+                  <div class="progress-group mb-3">Enterprise Systems Rollouts <span class="float-right font-weight-bold">85%</span>
+                    <div class="progress mt-1" style="height: 6px;"><div class="progress-bar progress-bar-glow" style="width: 85%"></div></div>
                   </div>
                 </div>
               </div>
@@ -419,41 +363,40 @@
         </section>
 
         <!-- EXPERIENCE SECTION -->
-        <section id="experience" class="mb-5">
+        <section id="experience">
           <div class="card">
-            <div class="card-header bg-grad-success py-3">
-              <h3 class="card-title font-weight-bold m-0"><i class="fas fa-briefcase mr-2"></i> Professional Experience</h3>
+            <div class="card-header">
+              <h3 class="card-title text-white font-weight-bold"><i class="fas fa-route mr-2 text-success"></i> Work History & Milestones</h3>
             </div>
             <div class="card-body">
               <div class="timeline timeline-inverse">
                 <div class="time-label">
-                  <span class="bg-primary px-3 py-2 font-weight-bold rounded-pill shadow-sm">Present Day</span>
+                  <span class="bg-primary px-3 py-1 font-weight-bold" style="border-radius: 4px;">Present</span>
                 </div>
                 <div>
-                  <i class="fas fa-laptop-code bg-primary text-white"></i>
-                  <div class="timeline-item shadow-none">
-                    <span class="time"><i class="fas fa-clock mr-1"></i> Active</span>
-                    <h3 class="timeline-header font-weight-bold"><a href="#" class="text-primary">Senior Full-Stack Architect</a></h3>
-                    <div class="timeline-body text-muted">
-                      Spearheading custom development workflows, localized dashboard rendering, and parsing systems. Designed robust dynamic systems using secure database practices to centralize analytics metrics while maintaining corporate systems connectivity.
+                  <i class="fas fa-layer-group bg-blue text-white"></i>
+                  <div class="timeline-item">
+                    <h3 class="timeline-header border-0"><a href="#">Senior Full-Stack Engineer & Infrastructure Architect</a></h3>
+                    <div class="timeline-body text-white-50">
+                      Driving internal enterprise management tooling designs, creating lightweight XML/JSON feed parsing platforms, and writing scalable automation web panels. Spearheading company system hardware routing solutions, data security audits, and centralized operations logic setups.
                     </div>
                   </div>
                 </div>
                 
                 <div class="time-label">
-                  <span class="bg-secondary px-3 py-2 font-weight-bold rounded-pill shadow-sm">Earlier Milestones</span>
+                  <span class="bg-gray px-3 py-1 text-dark font-weight-bold" style="border-radius: 4px;">Past Epics</span>
                 </div>
                 <div>
-                  <i class="fas fa-project-diagram bg-info text-white"></i>
-                  <div class="timeline-item shadow-none">
-                    <h3 class="timeline-header font-weight-bold"><a href="#" class="text-info">Full-Stack Engineer</a></h3>
-                    <div class="timeline-body text-muted">
-                      Architected performance optimizations for corporate platforms. Created programmatic vector modules (SVG transformations) and secure database pipelines using highly optimized MySQL indexing and transaction controls.
+                  <i class="fas fa-code-branch bg-purple text-white"></i>
+                  <div class="timeline-item">
+                    <h3 class="timeline-header border-0"><a href="#">Full-Stack Web Developer</a></h3>
+                    <div class="timeline-body text-white-50">
+                      Engineered microservices and dynamic custom text-to-graphics formatting software platforms. Designed schema models for structural relational databases handling millions of records efficiently.
                     </div>
                   </div>
                 </div>
                 <div>
-                  <i class="fas fa-hourglass-end bg-gray text-white"></i>
+                  <i class="fas fa-flag-checkered bg-gray"></i>
                 </div>
               </div>
             </div>
@@ -461,47 +404,44 @@
         </section>
 
         <!-- PROJECTS SECTION -->
-        <section id="projects" class="mb-5">
+        <section id="projects">
           <div class="card">
-            <div class="card-header bg-grad-warning py-3">
-              <h3 class="card-title font-weight-bold m-0 text-dark"><i class="fas fa-star mr-2"></i> Highlighted Solutions</h3>
+            <div class="card-header">
+              <h3 class="card-title text-white font-weight-bold"><i class="fas fa-folder-open mr-2 text-warning"></i> Engineered Solutions</h3>
             </div>
-            <div class="card-body py-4">
+            <div class="card-body">
               <div class="row">
-                <div class="col-md-4 mb-3">
-                  <div class="small-box bg-info h-100 d-flex flex-column justify-content-between p-3">
-                    <div class="inner">
-                      <h3 class="font-weight-bold text-white mb-2">REST API</h3>
-                      <p class="mb-0">Data compilation engines supporting nested structures.</p>
+                <div class="col-lg-4 col-md-6 mb-3">
+                  <div class="small-box p-4 h-100 d-flex flex-column justify-content-between">
+                    <div class="inner mb-3">
+                      <h3 class="h4 mb-2">API Engine</h3>
+                      <p class="text-white-50">High-performance custom parser architectures engineered to consume complex distributed data pipelines smoothly.</p>
                     </div>
-                    <div class="icon">
-                      <i class="fas fa-chart-pie opacity-7"></i>
+                    <div>
+                      <span class="tech-pill">PHP</span><span class="tech-pill">XML</span><span class="tech-pill">JSON</span>
                     </div>
-                    <a href="#" class="small-box-footer rounded-pill py-1 mt-3">XML/JSON Handlers <i class="fas fa-arrow-circle-right ml-1"></i></a>
                   </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                  <div class="small-box bg-success h-100 d-flex flex-column justify-content-between p-3">
-                    <div class="inner">
-                      <h3 class="font-weight-bold text-white mb-2">SVG Engine</h3>
-                      <p class="mb-0">Programmatic user dynamic image and canvas generation frameworks.</p>
+                <div class="col-lg-4 col-md-6 mb-3">
+                  <div class="small-box p-4 h-100 d-flex flex-column justify-content-between">
+                    <div class="inner mb-3">
+                      <h3 class="h4 mb-2">Dynamic Graphic UI</h3>
+                      <p class="text-white-50">Algorithmic text layout rendering layouts and automated vector asset output modules designed client-side.</p>
                     </div>
-                    <div class="icon">
-                      <i class="fas fa-paint-brush opacity-7"></i>
+                    <div>
+                      <span class="tech-pill">JavaScript</span><span class="tech-pill">SVG</span><span class="tech-pill">Canvas</span>
                     </div>
-                    <a href="#" class="small-box-footer rounded-pill py-1 mt-3">Vector Automation <i class="fas fa-arrow-circle-right ml-1"></i></a>
                   </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                  <div class="small-box bg-purple h-100 d-flex flex-column justify-content-between p-3">
-                    <div class="inner">
-                      <h3 class="font-weight-bold text-white mb-2">ERP Admin</h3>
-                      <p class="mb-0">Custom business intelligence monitoring systems.</p>
+                <div class="col-lg-4 col-md-12 mb-3">
+                  <div class="small-box p-4 h-100 d-flex flex-column justify-content-between">
+                    <div class="inner mb-3">
+                      <h3 class="h4 mb-2">Enterprise MIS</h3>
+                      <p class="text-white-50">Centralized custom metrics dashboards deployed using responsive AdminLTE frameworks to monitor secure infrastructure nodes.</p>
                     </div>
-                    <div class="icon">
-                      <i class="fas fa-network-wired opacity-7"></i>
+                    <div>
+                      <span class="tech-pill">AdminLTE</span><span class="tech-pill">SQL</span><span class="tech-pill">Networks</span>
                     </div>
-                    <a href="#" class="small-box-footer rounded-pill py-1 mt-3">Enterprise Dashboards <i class="fas fa-arrow-circle-right ml-1"></i></a>
                   </div>
                 </div>
               </div>
@@ -510,37 +450,31 @@
         </section>
 
         <!-- CONTACT SECTION -->
-        <section id="contact" class="mb-5">
-          <div class="card card-dark">
-            <div class="card-header bg-grad-dark py-3">
-              <h3 class="card-title font-weight-bold m-0"><i class="fas fa-paper-plane mr-2"></i> Get In Touch</h3>
+        <section id="contact">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title text-white font-weight-bold"><i class="fas fa-envelope mr-2 text-danger"></i> Connect.exe</h3>
             </div>
             <form id="contactForm">
-              <div class="card-body py-4">
-                <div id="formStatus" class="alert d-none rounded-lg p-3 mb-4"></div>
+              <div class="card-body p-4">
+                <div id="formStatus" class="alert d-none"></div>
                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group mb-3">
-                      <label for="contactName" class="font-weight-600 text-sm">Full Name</label>
-                      <input type="text" class="form-control rounded-lg py-2" id="contactName" placeholder="John Doe" required>
-                    </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="text-white-50 font-weight-bold" style="font-size: 0.9rem;">Your Name</label>
+                    <input type="text" class="form-control py-4" id="contactName" placeholder="John Doe" required>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group mb-3">
-                      <label for="contactEmail" class="font-weight-600 text-sm">Email Address</label>
-                      <input type="email" class="form-control rounded-lg py-2" id="contactEmail" placeholder="name@example.com" required>
-                    </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="text-white-50 font-weight-bold" style="font-size: 0.9rem;">Email Address</label>
+                    <input type="email" class="form-control py-4" id="contactEmail" placeholder="johndoe@example.com" required>
                   </div>
                 </div>
-                <div class="form-group mb-0">
-                  <label for="contactMessage" class="font-weight-600 text-sm">Your Message</label>
-                  <textarea class="form-control rounded-lg" id="contactMessage" rows="5" placeholder="Let me know how we can collaborate..." required></textarea>
+                <div class="form-group mt-2">
+                  <label class="text-white-50 font-weight-bold" style="font-size: 0.9rem;">Message Matrix</label>
+                  <textarea class="form-control" id="contactMessage" rows="4" placeholder="Type your ideas or proposal details here..." required></textarea>
                 </div>
               </div>
-              <div class="card-footer bg-transparent border-top-0 d-flex justify-content-end py-3">
-                <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 font-weight-bold elevation-2">
-                  <i class="fas fa-paper-plane mr-2"></i> Send Message
-                </button>
+              <div class="card-footer bg-transparent border-0 p-4 pt-0">
+                <button type="submit" class="btn btn-gradient px-4 py-2">Transmit Message <i class="fas fa-paper-plane ml-2"></i></button>
               </div>
             </form>
           </div>
@@ -548,30 +482,22 @@
 
       </div>
     </div>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
 
   <!-- Main Footer -->
-  <footer class="main-footer text-center py-4 bg-white border-top-0">
-    <strong class="text-muted">Copyright &copy; 2026 <a href="https://www.linkedin.com/in/billionbd/" target="_blank" rel="noopener noreferrer" class="text-primary font-weight-bold">billionbd</a>.</strong> All rights reserved.
+  <footer class="main-footer text-center bg-transparent border-0 py-4 text-white-50">
+    <small>Copyright &copy; 2026 <a href="https://www.linkedin.com/in/billionbd/" target="_blank" class="text-info font-weight-bold">billionbd</a>. Programmed dynamically.</small>
   </footer>
 </div>
-<!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-<!-- jQuery -->
+<!-- SCRIPTS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
 
-<!-- Beautiful Interactive Actions & Features -->
 <script>
   $(document).ready(function () {
-    
-    // 1. Dynamic Smooth Navigation Tracking (Active Nav Link & Page Title)
+    // 1. Dynamic Section Tracking
     const sections = $("section");
     const navLinks = $(".structural-nav-link");
 
@@ -582,7 +508,6 @@
       sections.each(function () {
         const top = $(this).offset().top;
         const bottom = top + $(this).outerHeight();
-
         if (scrollPos >= top && scrollPos <= bottom) {
           currentSectionId = $(this).attr("id");
         }
@@ -590,59 +515,25 @@
 
       if (currentSectionId) {
         navLinks.removeClass("active");
-        const activeItem = $(`.structural-nav-link[href="#${currentSectionId}"]`);
-        activeItem.addClass("active");
-        
-        // Dynamically update display Title
-        const currentText = activeItem.find('p').text();
-        $("#page-title-display").text(currentText);
+        $(`.structural-nav-link[href="#${currentSectionId}"]`).addClass("active");
       }
     });
 
-    // 2. High-Fidelity Custom Dark Mode Integration
-    $("#themeToggleBtn").on("click", function () {
-      $("body").toggleClass("dark-mode-active");
-      const isDark = $("body").hasClass("dark-mode-active");
-      
-      if (isDark) {
-        $("#themeToggleBtn")
-          .removeClass("btn-outline-secondary")
-          .addClass("btn-light");
-        $("#themeBtnText").text("Light Mode");
-        $("#themeToggleBtn i").removeClass("fa-moon").addClass("fa-sun");
-      } else {
-        $("#themeToggleBtn")
-          .removeClass("btn-light")
-          .addClass("btn-outline-secondary");
-        $("#themeBtnText").text("Dark Mode");
-        $("#themeToggleBtn i").removeClass("fa-sun").addClass("fa-moon");
-      }
-    });
-
-    // 3. Client Contact Form Presentation Script
+    // 2. Custom AJAX Simulation for Contact Submissions
     $("#contactForm").on("submit", function (e) {
       e.preventDefault();
-      
       const name = $("#contactName").val();
       const statusDiv = $("#formStatus");
 
-      statusDiv
-        .removeClass("d-none alert-danger alert-success")
-        .addClass("alert-success alert-dismissible")
-        .html(`<button type="button" class="close" data-dismiss="alert">&times;</button><h5><i class="icon fas fa-check-circle"></i> Connection Request Sent!</h5> Thank you <b>${name}</b>, your portfolio message simulation completed successfully.`);
+      statusDiv.removeClass("d-none alert-danger alert-success").addClass("alert-success")
+               .html(`<i class="icon fas fa-circle-check mr-2"></i> Connection established! Thank you ${name}, your inquiry message was recorded.`);
       
       $("#contactForm")[0].reset();
-
-      // Auto fadeout action
-      setTimeout(() => {
-        statusDiv.fadeOut(600, function() {
-          $(this).addClass("d-none").show();
-        });
-      }, 5000);
+      setTimeout(() => statusDiv.addClass("d-none"), 5000);
     });
 
-    // 4. Generate beautiful dynamic avatars based on name query parameters
-    $(".profile-avatar-target").attr("src", "https://ui-avatars.com/api/?name=Abdullah+Al+Amin&background=2c5364&color=fff&size=150&font-size=0.33&bold=true");
+    // 3. UI Init Dynamic Clean Avatar Fallback
+    $(".profile-avatar-target").attr("src", "https://ui-avatars.com/api/?name=Abdullah+Al+Amin&background=007bff&color=fff&size=150&bold=true");
   });
 </script>
 </body>
